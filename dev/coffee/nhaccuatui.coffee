@@ -32,10 +32,10 @@ NhacCuaTui = ->
                 result.status = true
                 $.each yqlResult.query.results.div, (idx, item) ->
                     result.items.push
-                        title: song.h3.a.title
-                        link: song.h3.a.href
-                        artist: song.p.content
-                        listen: song.p.span.content
+                        title: item.h3.a.title
+                        link: item.h3.a.href
+                        artist: item.p.content
+                        listen: item.p.span.content
 
             result
 
@@ -45,7 +45,7 @@ NhacCuaTui = ->
             link: ""
 
         if link.trim() isnt ""
-            yqlStatement = "SELECT * FROM html WHERE url='#{link}' AND xpath='//div[@class=\"download\"]//'"
+            yqlStatement = "SELECT * FROM html WHERE url='#{link}' AND xpath='//div[@class=\"download\"]//a'"
             yqlResult = _yqlExecuteQuery yqlStatement
             if yqlResult.query.count > 0
                 result =

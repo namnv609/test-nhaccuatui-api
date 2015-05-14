@@ -2,6 +2,7 @@
   width: 300px;
   padding: 3px;
   border: 1px solid #000;
+  margin: 0 0 10px 0;
 }
 .search-bar button {
   padding: 2px 20px;
@@ -16,6 +17,10 @@
 .song-list .song {
   padding: 10px 0;
   border-bottom: 1px dashed #CCC;
+  cursor: pointer;
+}
+.song-list .song:hover {
+  background: #CCC;
 }
 .song-list .song .title {
   font-weight: bold;
@@ -31,4 +36,8 @@
 .song-list .song .listen:before {
   content: "-";
   margin: 0 10px;
+}
+
+#player {
+  margin: 10px 0;
 }
